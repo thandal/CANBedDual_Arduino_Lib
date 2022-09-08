@@ -108,13 +108,11 @@ void sendData()
     for(int i=0; i<64; i++)str[i] = cnt;
     CAN0.send(0x01, 0, 0, 1, 64, str);
 }
-
-// ENDIF
 ```
 
 ## Get a Dev Board
 
-If you need a Dev board, plese try,
+If you need a Dev board, please try,
 
 - [CANBed Dual](https://www.longan-labs.cc/1030019.html)
 
@@ -147,7 +145,7 @@ SOFTWARE.
 
 ## Contact us
 
-If you have any question, please feel free to contact [support@longan-labs.cc](support@longan-labs.cc)
+If you have any questions, please feel free to contact [support@longan-labs.cc](support@longan-labs.cc)
 
 
 [![Analytics](https://ga-beacon.appspot.com/UA-101965714-1/Longan_CANFD)](https://github.com/igrigorik/ga-beacon)
