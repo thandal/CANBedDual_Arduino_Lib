@@ -9,8 +9,7 @@
 class CANBedDual
 {
   private:
-    unsigned long timerDelay = 0;
-    int canNum = 0;
+    int canNum = 0;  // 0: CAN0, 1: CAN1
     unsigned char canConfig[48];
     
   private:
@@ -25,8 +24,8 @@ class CANBedDual
         canNum = num;
     }
     
-    void init(unsigned long speed);
-    void initFD(unsigned long speed20, unsigned long speedfd);
+    void init(unsigned long speed);  // Initialize in CAN2.0 mode
+    void initFD(unsigned long speed20, unsigned long speedfd);  // Initialize in CANFD mode
     void initMaskFilt(unsigned char num, unsigned char ext, unsigned long mask, unsigned long filt);
     // id  CAN id
     // ext 0:standard, 1:extended, 
@@ -35,6 +34,6 @@ class CANBedDual
     // len data length
     // dta data buffer
     void send(unsigned long id, unsigned char ext, unsigned char rtr, unsigned char fd, unsigned char len, unsigned char *dta);
-    byte checkRecv();
+    byte checkRecv(); // Returns the number of bytes available to be read.
     byte read(unsigned long *id, int *ext, int *rtr, int *fd, int *len, unsigned char *str);
 };
